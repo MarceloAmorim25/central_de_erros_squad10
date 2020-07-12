@@ -9,18 +9,17 @@ namespace CentralDeErros.API.Models
 {
     public class Occurrence
     {
-        public int OccurrenceId { get; set; }
+        public int Id { get; set; }
 
-        public int Origin { get; set; }
+        public string Origin { get; set; }
 
         public string Details { get; set; }
 
         public DateTime OccurrenceDate { get; set; }
 
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        public int MicrosserviceId { get; set; }
 
-        public int UserId { get; set; }
+        public Microsservice Microsservice { get; set; }
 
     }
 }

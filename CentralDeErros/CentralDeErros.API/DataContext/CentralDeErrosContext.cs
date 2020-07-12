@@ -1,4 +1,5 @@
 ﻿using CentralDeErros.API.Models;
+using CentralDeErros.API.Models.Maps;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,5 +17,11 @@ namespace CentralDeErros.API.DataContext
            : base(options)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new OccurrenceModelConfig());
+        }
+
     }
 }
