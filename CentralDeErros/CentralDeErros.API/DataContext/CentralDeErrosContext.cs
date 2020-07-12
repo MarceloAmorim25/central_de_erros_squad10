@@ -12,6 +12,7 @@ namespace CentralDeErros.API.DataContext
     public class CentralDeErrosContext : DbContext
     {
         public DbSet<Occurrence> Occurrences { get; set; }
+        public DbSet<Microsservice> Microsservices { get; set; }
 
         public CentralDeErrosContext(DbContextOptions<CentralDeErrosContext> options)
            : base(options)
@@ -20,7 +21,8 @@ namespace CentralDeErros.API.DataContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new OccurrenceModelConfig());
+            modelBuilder.ApplyConfiguration(new OccurrenceMap());
+            modelBuilder.ApplyConfiguration(new MicrosserviceMap());
         }
 
     }

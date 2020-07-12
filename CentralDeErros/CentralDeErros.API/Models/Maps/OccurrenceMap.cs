@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CentralDeErros.API.Models.Maps
 {
-    public class OccurrenceModelConfig : IEntityTypeConfiguration<Occurrence>
+    public class OccurrenceMap : IEntityTypeConfiguration<Occurrence>
     {
         public void Configure(EntityTypeBuilder<Occurrence> builder)
         {
